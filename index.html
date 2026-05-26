@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Westhill Institute — Brochure Facts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2042;
+    --navy-deep:#0a1730;
+    --cream:#f5efe1;
+    --paper:#fbf7ec;
+    --gold:#b8860b;
+    --gold-bright:#d4a017;
+    --ink:#1a1a1a;
+    --line:rgba(15,32,66,0.18);
+    --green:#2a6f4d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter Tight',sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased;}
+  .container{max-width:980px;margin:0 auto;padding:48px 56px;}
+  @media (max-width:780px){.container{padding:32px 20px;}}
+
+  header{background:var(--navy);color:var(--cream);padding:48px 56px;}
+  .header-inner{max-width:980px;margin:0 auto;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,5.5vw,64px);line-height:1;letter-spacing:-0.02em;color:var(--cream);}
+  .subtitle{margin-top:14px;font-size:16px;color:rgba(245,239,225,0.75);max-width:600px;}
+  @media (max-width:780px){header{padding:36px 20px;}}
+
+  section{margin-top:56px;}
+  section:first-of-type{margin-top:0;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:32px;line-height:1.1;color:var(--navy);letter-spacing:-0.015em;margin-bottom:24px;}
+
+  /* HERO IB BLOCK */
+  .ib-hero{background:var(--navy);color:var(--cream);padding:48px 44px;margin-bottom:32px;position:relative;overflow:hidden;}
+  .ib-hero::before{content:"";position:absolute;top:-40px;right:-40px;width:280px;height:280px;background:radial-gradient(circle,rgba(184,134,11,0.18),transparent 70%);}
+  .ib-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:18px;position:relative;}
+  .ib-hero h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:24px;position:relative;}
+  .ib-hero h2 em{font-style:italic;color:var(--gold-bright);font-weight:400;}
+  .ib-hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,239,225,0.2);border:1px solid rgba(245,239,225,0.2);margin-top:32px;position:relative;}
+  .ib-hero-cell{background:var(--navy);padding:24px 20px;}
+  .ib-hero-num{font-family:'Fraunces',serif;font-weight:400;font-size:54px;color:var(--gold-bright);line-height:1;letter-spacing:-0.02em;}
+  .ib-hero-num small{font-size:20px;color:rgba(245,239,225,0.7);}
+  .ib-hero-lbl{margin-top:10px;font-size:13px;line-height:1.4;color:rgba(245,239,225,0.9);font-weight:400;}
+  .ib-hero-lbl strong{color:var(--gold-bright);font-weight:600;}
+  @media (max-width:780px){.ib-hero{padding:32px 24px;} .ib-hero-grid{grid-template-columns:1fr;}}
+
+  /* IB RECOGNITION CARDS */
+  .ib-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
+  .ib-card{background:var(--cream);border-left:4px solid var(--gold);padding:28px 26px;position:relative;}
+  .ib-card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .ib-card-title{font-family:'Fraunces',serif;font-weight:600;font-size:22px;line-height:1.15;color:var(--navy);letter-spacing:-0.01em;margin-bottom:12px;}
+  .ib-card-body{font-size:14px;line-height:1.5;color:var(--ink);}
+  .ib-card-body strong{color:var(--navy);font-weight:600;}
+  .ib-card-stat{font-family:'Fraunces',serif;font-weight:500;font-size:38px;color:var(--gold);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
+  .parent-benefit{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;line-height:1.5;color:var(--navy);}
+  .parent-benefit::before{content:"For your child:";display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:500;}
+
+  /* Plain-language intro blocks */
+  .plain-intro{background:var(--cream);border:1px solid var(--line);padding:22px 26px;margin-bottom:24px;}
+  .plain-intro p{font-size:15px;line-height:1.55;color:var(--ink);}
+  .plain-intro p strong{color:var(--navy);font-weight:600;}
+  .plain-intro .pi-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500;}
+
+  /* Accreditation parent benefit row */
+  .accred-benefits{margin-top:24px;display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid var(--navy);}
+  .ab-row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center;}
+  .ab-mark{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-0.01em;}
+  .ab-text{font-size:14px;line-height:1.5;color:var(--ink);}
+  .ab-text strong{color:var(--navy);font-weight:600;}
+  @media (max-width:780px){.ab-row{grid-template-columns:1fr;gap:4px;}}
+  @media (max-width:780px){.ib-cards{grid-template-columns:1fr;}}
+
+  .headline-fact{background:var(--navy);color:var(--cream);padding:36px 40px;margin-bottom:32px;display:flex;align-items:center;gap:32px;}
+  .hf-num{font-family:'Fraunces',serif;font-weight:400;font-size:88px;line-height:0.85;color:var(--gold-bright);letter-spacing:-0.03em;flex-shrink:0;}
+  .hf-num small{font-size:32px;color:var(--cream);opacity:0.6;}
+  .hf-text{font-family:'Fraunces',serif;font-size:24px;line-height:1.2;font-weight:400;letter-spacing:-0.01em;}
+  .hf-text strong{color:var(--gold-bright);font-weight:500;}
+  @media (max-width:780px){.headline-fact{flex-direction:column;align-items:flex-start;gap:16px;padding:28px 24px;} .hf-num{font-size:64px;} .hf-text{font-size:20px;}}
+
+  .facts{display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid var(--navy);}
+  .fact{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);}
+  .fact-data{font-family:'Fraunces',serif;font-weight:500;font-size:42px;color:var(--navy);letter-spacing:-0.02em;line-height:1;min-width:160px;text-align:right;}
+  .fact-data small{font-size:20px;color:var(--gold);font-weight:400;}
+  .fact-label{font-size:16px;color:var(--ink);line-height:1.35;font-weight:400;}
+  .fact-label strong{color:var(--navy);font-weight:600;}
+  @media (max-width:780px){.fact{grid-template-columns:1fr;gap:4px;} .fact-data{text-align:left;font-size:36px;min-width:0;}}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:24px;}
+  .sg-cell{background:var(--paper);padding:24px 18px;text-align:center;}
+  .sg-cell.dark{background:var(--navy);color:var(--cream);}
+  .sg-num{font-family:'Fraunces',serif;font-weight:500;font-size:48px;line-height:1;letter-spacing:-0.02em;color:var(--navy);}
+  .sg-cell.dark .sg-num{color:var(--gold-bright);}
+  .sg-num small{font-size:18px;color:var(--gold);}
+  .sg-lbl{margin-top:8px;font-size:12px;line-height:1.3;color:var(--ink);font-weight:500;}
+  .sg-cell.dark .sg-lbl{color:rgba(245,239,225,0.85);}
+  @media (max-width:780px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .continuum{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .cont-card{background:var(--cream);border-top:4px solid var(--gold);padding:24px 20px;}
+  .cont-code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.15em;font-weight:500;}
+  .cont-name{margin-top:6px;font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--navy);line-height:1.15;letter-spacing:-0.01em;}
+  .cont-ages{margin-top:8px;font-size:14px;color:var(--ink);font-weight:500;}
+  .cont-ages strong{color:var(--navy);font-weight:700;}
+  @media (max-width:780px){.continuum{grid-template-columns:1fr;}}
+
+  .accred{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--navy);border:2px solid var(--navy);}
+  .ac-cell{background:var(--paper);padding:24px 12px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:120px;}
+  .ac-mark{font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--navy);letter-spacing:-0.01em;line-height:1;}
+  .ac-name{margin-top:6px;font-size:10px;color:var(--ink);font-weight:500;line-height:1.3;letter-spacing:0.02em;}
+  @media (max-width:780px){.accred{grid-template-columns:repeat(2,1fr);}}
+
+  .quote-bar{background:var(--cream);border-left:4px solid var(--gold);padding:24px 28px;margin-top:24px;}
+  .quote-bar p{font-size:15px;color:var(--ink);line-height:1.5;}
+  .quote-bar strong{color:var(--navy);font-weight:600;}
+
+  .marketing-note{margin-top:48px;background:var(--navy-deep);color:var(--cream);padding:32px 36px;}
+  .marketing-note .tag{color:var(--gold-bright);margin-bottom:10px;}
+  .marketing-note p{font-size:14px;line-height:1.6;color:rgba(245,239,225,0.85);}
+  .marketing-note strong{color:var(--gold-bright);font-weight:600;}
+  @media (max-width:780px){.marketing-note{padding:24px 20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="tag">Brochure Source — Academic Facts</div>
+    <h1>Westhill Institute</h1>
+    <p class="subtitle">Verified data points from Westhill's Academic Director and most recent board reports. Designed to be adapted into the final brochure layout.</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- HERO: 1 OF 4 -->
+  <section>
+    <div class="eyebrow">The Headline</div>
+    <div class="headline-fact">
+      <div class="hf-num">1<small>of 4</small></div>
+      <div class="hf-text">Westhill is one of only <strong>4 schools in Mexico City</strong> with the <strong>complete IB continuum</strong> — and the <strong>only one</strong> that is fully in English, non-secular, and American-curriculum.</div>
+    </div>
+  </section>
+
+  <!-- IB PARTNERSHIP — THE HERO -->
+  <section>
+    <div class="eyebrow">Section 01 — The IB Relationship</div>
+    <h2>Westhill doesn't just deliver the IB. Westhill helps shape it.</h2>
+
+    <div class="plain-intro">
+      <div class="pi-tag">What is the IB?</div>
+      <p>The <strong>International Baccalaureate (IB)</strong> is the world's most respected international education program, recognized by top universities in over <strong>140 countries</strong>. IB graduates are known for being <strong>independent thinkers, strong writers, and confident in more than one language</strong> — exactly the profile universities and employers look for. Westhill is one of only <strong>4 schools in Mexico City</strong> that offers the complete IB program from preschool through high school.</p>
+    </div>
+
+    <div class="ib-hero">
+      <div class="ib-hero-eyebrow">Westhill × International Baccalaureate</div>
+      <h2>Most IB schools follow the framework. Westhill <em>contributes to it</em>.</h2>
+
+      <div class="ib-hero-grid">
+        <div class="ib-hero-cell">
+          <div class="ib-hero-num">2030</div>
+          <div class="ib-hero-lbl"><strong>Fully IB accredited through 2030.</strong> Following the most successful accreditation visit in Westhill's history.</div>
+        </div>
+        <div class="ib-hero-cell">
+          <div class="ib-hero-num">6<small>worldwide</small></div>
+          <div class="ib-hero-lbl"><strong>One of 6 schools globally</strong> selected for the IB's first-ever Action Research Project on Inclusion.</div>
+        </div>
+        <div class="ib-hero-cell">
+          <div class="ib-hero-num">PDP</div>
+          <div class="ib-hero-lbl"><strong>Westhill's Program Development Plan</strong> selected and published by the IB as a global exemplar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IB RECOGNITION DETAIL CARDS -->
+    <div class="ib-cards">
+      <div class="ib-card">
+        <div class="ib-card-tag">IB Action Research Project</div>
+        <div class="ib-card-stat">First in the World</div>
+        <div class="ib-card-title">Leading the IB's global inclusion research</div>
+        <div class="ib-card-body">Westhill is one of just <strong>6 schools worldwide</strong> chosen for the IB's inaugural Action Research Project on Inclusion, working directly with <strong>Professor Mel Ainscow</strong> — one of the world's leading authorities on inclusive education. The Americas region is leading; the initiative expands to Asia after Westhill's six-month lead.</div>
+        <div class="parent-benefit">Your child learns in a school that is helping define how IB classrooms support every student. Teaching approaches, classroom strategies, and inclusion practices at Westhill are being studied and refined in real time.</div>
+      </div>
+
+      <div class="ib-card">
+        <div class="ib-card-tag">IB Program Development Plan</div>
+        <div class="ib-card-stat">Published Globally</div>
+        <div class="ib-card-title">Westhill's PDP is an IB exemplar</div>
+        <div class="ib-card-body">Westhill's Program Development Plan — the institutional roadmap for how an IB school grows and improves — was <strong>selected by the IB</strong> as a global example of best practice and <strong>published for other schools</strong> to learn from.</div>
+        <div class="parent-benefit">Your child's school is the example other IB schools study to improve their own programs. The way Westhill plans, teaches, and evaluates is considered a model worldwide.</div>
+      </div>
+
+      <div class="ib-card">
+        <div class="ib-card-tag">IBAMEX Regional Hub</div>
+        <div class="ib-card-stat">400+ Educators</div>
+        <div class="ib-card-title">Westhill is where IB educators come to learn</div>
+        <div class="ib-card-body">More than <strong>400 directors, coordinators, and teachers</strong> from across the Americas have trained on the Westhill campus at IB regional workshops. In October 2025 alone, <strong>27 Westhill educators</strong> participated in IBAMEX — equivalent to <strong>$17,550 USD in PD value</strong>, and over <strong>$47,450 USD cumulative</strong> across three years.</div>
+        <div class="parent-benefit">Your child's teachers are continuously trained at the highest international level. Westhill invests heavily in keeping faculty current with the latest IB methods, which means stronger teaching every year in your child's classroom.</div>
+      </div>
+
+      <div class="ib-card">
+        <div class="ib-card-tag">IB Model School</div>
+        <div class="ib-card-stat">DC-Recognized</div>
+        <div class="ib-card-title">Invited to host visiting schools</div>
+        <div class="ib-card-body">Westhill has been <strong>invited by the IB's Washington DC office</strong> to host visiting IB schools — including Tampico — as a recognized model institution. A peer school comes to Westhill to see how the IB is done.</div>
+        <div class="parent-benefit">Your child attends a school other schools want to imitate. When the IB needs to show what a strong IB school looks like, they send people to Westhill.</div>
+      </div>
+
+      <div class="ib-card">
+        <div class="ib-card-tag">Accreditation Visit</div>
+        <div class="ib-card-stat">Strongest Ever</div>
+        <div class="ib-card-title">"Praised across all programs"</div>
+        <div class="ib-card-body">Westhill's most recent IB accreditation visit was the <strong>most successful in the school's history</strong>, with praise across all three programs (PYP, MYP, DP). Full accreditation is confirmed through <strong>2030</strong>.</div>
+        <div class="parent-benefit">Your child's school has been formally evaluated by the IB and confirmed to meet international standards across every program for the next five years. Enrollment today guarantees a fully accredited education through graduation.</div>
+      </div>
+
+      <div class="ib-card">
+        <div class="ib-card-tag">Continuous Authorization</div>
+        <div class="ib-card-stat">Since 2013</div>
+        <div class="ib-card-title">A decade of full-continuum IB</div>
+        <div class="ib-card-body">Westhill has held <strong>full IB continuum authorization since 2013</strong> — over a decade of formal implementation, evaluation, and continuous improvement across PYP, MYP, and DP.</div>
+        <div class="parent-benefit">Your child enters a program with more than a decade of refined practice — not a school still learning how to deliver the IB. The teaching, planning, and assessment systems are mature and proven.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CONTINUUM -->
+  <section>
+    <div class="eyebrow">Section 02 — The IB Continuum at Westhill</div>
+    <h2>One philosophy. Twelve years. PreK to graduation.</h2>
+
+    <div class="plain-intro">
+      <div class="pi-tag">What the IB continuum gives your child</div>
+      <p>From ages 3 through 18, your child follows <strong>one connected learning philosophy</strong> — not a patchwork of programs. Critical thinking habits start in PreK, deepen in middle school, and culminate in a globally recognized high school diploma. <strong>No transition shock between sections.</strong> No starting over. Just one continuous, increasingly rigorous education designed by the IB for international students.</p>
+    </div>
+
+    <div class="continuum">
+      <div class="cont-card">
+        <div class="cont-code">PYP</div>
+        <div class="cont-name">Primary Years Programme</div>
+        <div class="cont-ages"><strong>Ages 3–11</strong> · PreK to Grade 5</div>
+        <p style="margin-top:14px;font-size:13px;line-height:1.5;color:var(--ink);">Students learn through curiosity and inquiry, asking questions and connecting ideas across subjects. Builds the foundation of being a confident, independent thinker.</p>
+      </div>
+      <div class="cont-card">
+        <div class="cont-code">MYP</div>
+        <div class="cont-name">Middle Years Programme</div>
+        <div class="cont-ages"><strong>Ages 11–14</strong> · Grades 6 to 8</div>
+        <p style="margin-top:14px;font-size:13px;line-height:1.5;color:var(--ink);">Students take 8 subject areas and learn to apply them to real-world challenges. Develops strong writing, research, and the discipline needed for high school success.</p>
+      </div>
+      <div class="cont-card">
+        <div class="cont-code">DP</div>
+        <div class="cont-name">Diploma Programme</div>
+        <div class="cont-ages"><strong>Ages 16–18</strong> · Grades 11 and 12</div>
+        <p style="margin-top:14px;font-size:13px;line-height:1.5;color:var(--ink);">The globally recognized diploma accepted by top universities in 140+ countries. Includes a major research essay and an independent project — students arrive at university already trained for it.</p>
+      </div>
+    </div>
+
+    <div class="stat-grid" style="margin-top:32px;">
+      <div class="sg-cell">
+        <div class="sg-num">119</div>
+        <div class="sg-lbl">IB World Schools<br>in Mexico</div>
+      </div>
+      <div class="sg-cell">
+        <div class="sg-num">62</div>
+        <div class="sg-lbl">Offer PYP<br>(nationally)</div>
+      </div>
+      <div class="sg-cell">
+        <div class="sg-num">49</div>
+        <div class="sg-lbl">Offer MYP<br>(nationally)</div>
+      </div>
+      <div class="sg-cell dark">
+        <div class="sg-num">4</div>
+        <div class="sg-lbl">Full continuum<br>in Mexico City</div>
+      </div>
+    </div>
+
+    <div class="quote-bar">
+      <p>Among the 4 full-continuum IB schools in Mexico City, Westhill is <strong>the only one</strong> that combines: <strong>full English instruction</strong>, <strong>American curriculum</strong>, <strong>non-secular identity</strong>, and <strong>preschool through high school</strong> in one continuous program.</p>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS -->
+  <section>
+    <div class="eyebrow">Section 03 — Accreditations</div>
+    <h2>5 accreditations. Recognized in Mexico, the U.S., and worldwide.</h2>
+
+    <div class="plain-intro">
+      <div class="pi-tag">Why accreditations matter</div>
+      <p>An accreditation is an <strong>independent stamp of approval</strong> from a respected international or national body. It means an outside expert team has visited Westhill, examined every program, and confirmed it meets their standards. Five separate accrediting bodies have done this. <strong>Together, they make Westhill's diplomas valid and accepted everywhere your child may want to go.</strong></p>
+    </div>
+
+    <div class="accred">
+      <div class="ac-cell">
+        <div class="ac-mark">IB</div>
+        <div class="ac-name">International<br>Baccalaureate</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-mark">SAIS</div>
+        <div class="ac-name">Southern Association<br>of Independent Schools</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-mark">Cognia</div>
+        <div class="ac-name">Global<br>Accreditation</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-mark">SEP</div>
+        <div class="ac-name">Secretaría de<br>Educación Pública</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-mark">UNAM</div>
+        <div class="ac-name">Universidad Nacional<br>Autónoma de México</div>
+      </div>
+    </div>
+
+    <div class="accred-benefits">
+      <div class="ab-row">
+        <div class="ab-mark">IB</div>
+        <div class="ab-text"><strong>The IB Diploma</strong> is the most universally accepted high school credential in the world. Top universities in 140+ countries actively recruit IB graduates and often offer them advanced placement or course credit.</div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-mark">SAIS</div>
+        <div class="ab-text"><strong>The same accreditor</strong> used by leading independent schools across the southern United States. SAIS membership means Westhill is held to the same standards as top American private schools — making U.S. university transitions seamless.</div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-mark">Cognia</div>
+        <div class="ab-text"><strong>A global accreditor</strong> recognized in over 80 countries. Cognia accreditation ensures Westhill's diploma is accepted at universities and schools worldwide, including transfers if your family moves abroad.</div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-mark">SEP</div>
+        <div class="ab-text"><strong>Full validity in Mexico.</strong> Your child receives a SEP-recognized Mexican high school certificate, opening doors to every Mexican university and meeting all national requirements.</div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-mark">UNAM</div>
+        <div class="ab-text"><strong>Endorsement from Mexico's most prestigious university.</strong> Westhill's high school program is recognized by UNAM, meaning your child graduates with a UNAM-validated diploma alongside the U.S. and IB diplomas.</div>
+      </div>
+    </div>
+
+    <div class="facts" style="margin-top:32px;">
+      <div class="fact">
+        <div class="fact-data">3</div>
+        <div class="fact-label"><strong>Diplomas at graduation:</strong> U.S. High School, IB Diploma, and UNAM. Your child leaves Westhill ready for any university in any country.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WESTHILL AT A GLANCE -->
+  <section>
+    <div class="eyebrow">Section 04 — Westhill at a Glance</div>
+    <h2>A growing, global community.</h2>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-data">1992</div>
+        <div class="fact-label"><strong>Founded.</strong> Over 30 years educating Mexico City families.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">712</div>
+        <div class="fact-label"><strong>Students enrolled</strong> for 2025–26. Up from 690 the previous year — a 3% growth.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">40<small>+</small></div>
+        <div class="fact-label"><strong>Student nationalities</strong> in the Westhill community.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">20<small>+</small></div>
+        <div class="fact-label"><strong>Countries represented</strong> among Westhill teachers.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">60<small>/40</small></div>
+        <div class="fact-label"><strong>Foreign / Mexican student ratio</strong> overall. Cárpatos campus reaches 70/30.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">94<small>%</small></div>
+        <div class="fact-label"><strong>Teacher retention rate</strong> — up from 60% three years ago.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC OUTCOMES -->
+  <section>
+    <div class="eyebrow">Section 05 — Academic Outcomes</div>
+    <h2>Above the international norm. Across every High School grade.</h2>
+
+    <div class="plain-intro">
+      <div class="pi-tag">What is the NWEA MAP?</div>
+      <p>The <strong>NWEA MAP Growth assessment</strong> is the world's most widely used international benchmark for student learning, taken by <strong>over 13 million students across 145 countries</strong>. It compares your child's performance to a global average — not just other Mexican schools. Westhill High School students consistently <strong>score above that global average</strong> in every subject tested.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-data">+6.4</div>
+        <div class="fact-label"><strong>Grade 10 Reading</strong> — points above the international NWEA norm.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">+6.0</div>
+        <div class="fact-label"><strong>Grade 11 Reading</strong> — points above the international NWEA norm.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">+5.5</div>
+        <div class="fact-label"><strong>Grade 10 Mathematics</strong> — points above the international NWEA norm.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">+5.0</div>
+        <div class="fact-label"><strong>Grade 11 Mathematics</strong> — points above the international NWEA norm.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">+5.8</div>
+        <div class="fact-label"><strong>Grade 10 Language Usage</strong> — points above the international NWEA norm.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">+5.5</div>
+        <div class="fact-label"><strong>Grade 11 Language Usage</strong> — points above the international NWEA norm.</div>
+      </div>
+    </div>
+
+    <div class="quote-bar">
+      <p><strong>The bottom line:</strong> Across every High School grade tested and every subject — Reading, Math, Language Usage — Westhill students score above the international norm by 5 to 6.5 RIT points.</p>
+    </div>
+  </section>
+
+  <!-- GLOBAL EXPERIENCES -->
+  <section>
+    <div class="eyebrow">Section 06 — Beyond the Classroom</div>
+    <h2>A global education in practice.</h2>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-data">5</div>
+        <div class="fact-label"><strong>International exchange destinations:</strong> Prague, Iceland, Japan, New Zealand, Korea.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">3<small>mo.</small></div>
+        <div class="fact-label"><strong>New Zealand study abroad.</strong> Westhill's first international study abroad cohort completed a full term at Botany Downs Secondary College (Feb–Apr 2025).</div>
+      </div>
+      <div class="fact">
+        <div class="fact-data">100<small>%</small></div>
+        <div class="fact-label"><strong>Parent satisfaction</strong> on the 2025 CAS Trip to Prague (Grades 8–11).</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marketing-note">
+    <div class="tag">Note for Marketing</div>
+    <p>All figures are pulled directly from the Westhill Academic Director's June 2025 and October 2025 board reports, NWEA MAP Fall 2025 diagnostic data, and IB official records. The brochure can adapt this content into charts, visuals, and layouts. The <strong>IB partnership section</strong> (Section 01) should be the most prominent — it is Westhill's strongest differentiator and applies to no other school in Mexico City.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
